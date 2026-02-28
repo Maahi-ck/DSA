@@ -83,6 +83,8 @@ def minimum_in_rotated_sorted(nums):
 ## maximum value index = minimum value index - 1 for a rotated sorted array
 def maximum_in_rotated_sorted(nums):
         n=len(nums)
+        if n==1 :
+                return 0
         ## not rotated
         if nums[0]<nums[n-1]:
                 return n-1

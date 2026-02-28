@@ -71,7 +71,7 @@ def minimum_in_rotated_sorted(nums):
         right=n-1
         while left<=right :
                 mid=(left+right)//2
-                if nums[mid-1]>nums[mid] :
+                if nums[mid-1]>nums[mid] and nums[mid]<nums[mid+1] :
                         return mid
                 ## sorted left part -> minimum wont be here
                 elif nums[0]<nums[mid]:

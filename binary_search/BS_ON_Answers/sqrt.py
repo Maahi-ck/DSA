@@ -1,6 +1,6 @@
 def sqrt(n):
-    if n==0 :
-        return 0
+    if n==0 or n==1:
+        return n 
        
     low=1
     high=n-1

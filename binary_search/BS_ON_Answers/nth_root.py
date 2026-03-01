@@ -1,6 +1,6 @@
 def Nthroot(num,n):
-    if num==0 :
-        return 0
+    if num==0 or num ==1 :
+        return num
        
     low=1
     high=n-1

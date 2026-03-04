@@ -17,6 +17,7 @@ class Solution:
 
         low = max(weights)
         high=sum
+        ans=-1
         while low <= high :
             mid = (low + high) // 2
             number_of_days=self.find(mid,weights)

@@ -61,18 +61,26 @@ def count_occurances(nums,target):
 def minimum_in_rotated_sorted(nums):
         n=len(nums)
         if n==1 :
-                return 0
-        
-        ## not rotated
+                return nums[0]
+
         if nums[0]<nums[n-1]:
-                return 0
+            return nums[0]
         
         left=0
         right=n-1
         while left<=right :
                 mid=(left+right)//2
+                print(mid)
+                if mid==0 :
+                    if nums[0]<nums[1]:
+                        return nums[0]
+                    else :
+                        return nums[1]
+                if mid ==n-1 :
+                     return nums[n-1]
+                     
                 if nums[mid-1]>nums[mid] and nums[mid]<nums[mid+1] :
-                        return mid
+                        return nums[mid]
                 ## sorted left part -> minimum wont be here
                 elif nums[0]<nums[mid]:
                         left=mid+1

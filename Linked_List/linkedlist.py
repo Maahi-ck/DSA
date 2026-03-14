@@ -1,6 +1,6 @@
 class Node:
-    def __init__(self, data):
-        self.data = data
+    def __init__(self, value):
+        self.data = value
         self.next = None
 
 def create_linked_list(nums):
@@ -18,16 +18,18 @@ def create_linked_list(nums):
     return head
 
 def print_list(head):
-    current = head
+    current = head 
     while current:
         print(current.data, end=" -> ")
         current = current.next
     print("None")
 
+
 def insert_at_head(head, value):
     new_node = Node(value)
     new_node.next = head
-    return new_node
+    head=new_node
+    return head
 
 def delete_node(head, key):
     if head is None:
@@ -49,7 +51,7 @@ def delete_node(head, key):
 def length(head):
     count = 0
     current = head
-    
+
     while current:
         count += 1
         current = current.next
@@ -62,6 +64,19 @@ def search(head, key):
     while current:
         if current.data == key:
             return True
+        
         current = current.next
         
     return False
+
+def reverse_list(head):
+    prev = None
+    current = head
+
+    while current:
+        next_node = current.next   # store next node
+        current.next = prev        # reverse link
+        prev = current             # move prev forward
+        current = next_node        # move current forward
+
+    return prev
